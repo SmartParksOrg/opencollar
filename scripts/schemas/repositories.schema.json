@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenCollar repository index",
+  "type": "object",
+  "required": ["repositories"],
+  "properties": {
+    "repositories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "display_name", "category", "status", "visibility", "description", "license", "default_branch", "devices", "audience", "links", "releases", "related", "notes"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string", "pattern": "^[A-Za-z0-9._-]+$"},
+          "display_name": {"type": "string", "minLength": 1},
+          "category": {"enum": ["firmware", "device-docs", "hardware", "mechanics", "tool", "decoder", "integration", "platform", "archive", "hub"]},
+          "status": {"enum": ["current", "maintained", "legacy", "experimental", "archived", "private"]},
+          "visibility": {"enum": ["public", "private"]},
+          "description": {"type": "string"},
+          "license": {"type": "string"},
+          "default_branch": {"type": "string"},
+          "last_push": {"type": "string"},
+          "devices": {"type": "array", "items": {"type": "string"}},
+          "audience": {"type": "array", "items": {"enum": ["user", "developer", "hardware"]}},
+          "links": {
+            "type": "object",
+            "required": ["repo", "releases"],
+            "properties": {
+              "repo": {"type": "string", "format": "uri"},
+              "releases": {"type": "string", "format": "uri"},
+              "docs": {"type": ["string", "null"]},
+              "app": {"type": ["string", "null"]}
+            }
+          },
+          "releases": {
+            "type": "object",
+            "required": ["track"],
+            "properties": {
+              "track": {"type": "boolean"},
+              "asset_patterns": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "related": {"type": "array", "items": {"type": "string"}},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

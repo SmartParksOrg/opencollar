@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenCollar tools",
+  "type": "object",
+  "required": ["tools"],
+  "properties": {
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name", "tasks", "description", "url", "repo", "platform", "status", "audience"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "display_name": {"type": "string"},
+          "tasks": {"type": "array", "items": {"enum": ["configure", "update-firmware", "download-logs", "decode-logs", "decode-uplinks", "plan", "replay"]}},
+          "description": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "repo": {"type": ["string", "null"]},
+          "platform": {"enum": ["web", "web-bluetooth", "android", "ios", "lorawan-server", "local"]},
+          "status": {"enum": ["current", "maintained", "legacy", "experimental"]},
+          "audience": {"type": "array", "items": {"enum": ["user", "developer", "hardware"]}},
+          "supported_firmware": {"type": "string"},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

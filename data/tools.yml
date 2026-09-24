@@ -1,0 +1,110 @@
+# User-facing and developer tools. Hand-maintained; see scripts/schemas/tools.schema.json.
+# tasks: configure | update-firmware | download-logs | decode-logs | decode-uplinks | plan | replay
+tools:
+  - id: ble-settings-app
+    display_name: Smart Parks Connect ShortRange (BLE web app)
+    tasks: [configure, update-firmware, download-logs]
+    description: Connect to a device over Web Bluetooth from Chrome or Edge to read and change every setting, send commands, download the flash logs, view positions on a map and update the firmware with the bundled release images.
+    url: https://smartparksorg.github.io/ble-settings-app/
+    repo: ble-settings-app
+    platform: web-bluetooth
+    status: current
+    audience: [user]
+    supported_firmware: "4.4.2 to 8.0.x (settings schemas bundled per release)"
+    notes: Requires a Chromium-based browser with Bluetooth on a laptop or Android phone. Also includes a HEX composer for LoRaWAN downlinks.
+
+  - id: connect-app
+    display_name: Smart Parks Connect App (Android)
+    tasks: [configure, update-firmware, download-logs]
+    description: Android app to scan, connect and configure Edge devices over Bluetooth, read status and logs, and update firmware from phone storage or automatically from the Smart Parks file server.
+    url: https://play.google.com/store/apps/details?id=com.smartparks_connect_app
+    repo: smartparks-connect-app
+    platform: android
+    status: current
+    audience: [user]
+    supported_firmware: "all Edge firmware versions"
+    notes: Source code is private. Release APKs are attached to the private repository releases.
+
+  - id: raw-logs-decoder
+    display_name: Raw logs decoder
+    tasks: [decode-logs]
+    description: Upload a raw log file downloaded from a device, pick the decoder that matches the firmware version, and export the decoded records as CSV, JSON or Excel, with charts and a map.
+    url: https://smartparksorg.github.io/raw_logs_decoder/
+    repo: raw_logs_decoder
+    platform: web
+    status: current
+    audience: [user, developer]
+    supported_firmware: "6.9 to 8.x with bundled decoders (6.11.2, 6.14.0, 6.15.1, 7.2.0); any version with a custom decoder"
+    notes: Runs entirely in the browser; no data leaves your computer.
+
+  - id: payload-decoders
+    display_name: LoRaWAN payload decoders
+    tasks: [decode-uplinks]
+    description: The JavaScript decoder that turns LoRaWAN uplinks into JSON. It ships with every firmware release as ttn_decoder-vX.js and is installed on the LoRaWAN network server (TTN, ChirpStack, ThingPark).
+    url: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases
+    repo: smartparks-opencollar-edge-fw-public
+    platform: lorawan-server
+    status: current
+    audience: [developer]
+    supported_firmware: "one decoder file per firmware release"
+    notes: Older versions are on https://files.smartparks.org/edge/decoder/ (TTN, ChirpStack v3 and v4 flavours up to 6.15.1).
+
+  - id: acc-calculator
+    display_name: Accelerometer calculator
+    tasks: [plan]
+    description: Estimate the power, storage and payload trade-offs of accelerometer sampling before changing settings or firmware.
+    url: https://smartparksorg.github.io/opencollar-acc-calculator/
+    repo: opencollar-acc-calculator
+    platform: web
+    status: experimental
+    audience: [developer]
+    supported_firmware: "design study; the summary message it models is not in the firmware"
+    notes: ""
+
+  - id: nrf-connect
+    display_name: nRF Connect for Mobile (fallback DFU)
+    tasks: [update-firmware]
+    description: Nordic's generic Bluetooth app. Used only when the Connect App cannot complete a firmware update; loads the same DFU files.
+    url: https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-mobile
+    repo: null
+    platform: android
+    status: maintained
+    audience: [user]
+    supported_firmware: "all"
+    notes: Use with care; the wiki page https://wiki.smartparks.org/devices/opencollar/firmware/nrfconnect has instructions.
+
+  - id: toolset
+    display_name: Smart Parks Toolset (legacy)
+    tasks: [decode-uplinks, plan]
+    description: Battery calculator plus payload decoder and encoder apps for first-generation devices and Edge firmware up to 6.5.0.
+    url: https://toolset.smartparks.org/
+    repo: smartparks-toolset
+    platform: web
+    status: legacy
+    audience: [user, developer]
+    supported_firmware: "first generation; Edge up to 6.5.0"
+    notes: ""
+
+  - id: connect-web
+    display_name: Smart Parks Connect Web (legacy)
+    tasks: [configure]
+    description: Compose settings and command downlinks for a ChirpStack v3 server or RockBLOCK from a web form.
+    url: https://connect.smartparks.org
+    repo: smartparks-connect-web
+    platform: web
+    status: legacy
+    audience: [developer]
+    supported_firmware: "settings templates 2.10, 2.15 and 3.2"
+    notes: Last change 2023-12.
+
+  - id: lp0-replay
+    display_name: LP0 replay tool
+    tasks: [replay]
+    description: Replay, decrypt and decode LoRaWAN uplinks captured as Semtech UDP JSONL logs, for testing the LP0 offload feature.
+    url: https://github.com/SmartParksOrg/smartparks-lp0-replay-app
+    repo: smartparks-lp0-replay-app
+    platform: local
+    status: maintained
+    audience: [developer]
+    supported_firmware: "7.2 and later (LP0)"
+    notes: ""

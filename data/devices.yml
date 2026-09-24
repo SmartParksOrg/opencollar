@@ -1,0 +1,663 @@
+# OpenCollar device inventory. Hand-maintained; see scripts/schemas/devices.schema.json.
+# id is used in repositories.yml and tools.yml. confidence marks how well the entry is verified
+# against firmware source, repositories and the wiki (high | medium | low). Low renders a badge.
+devices:
+  - id: rangeredge
+    display_name: RangerEdge
+    family: rangeredge
+    status: current
+    availability: catalog
+    summary: Medium-sized rechargeable GPS tracker with LoRaWAN, for vehicles, rangers, camera traps and other assets.
+    use_cases: [vehicle tracking, ranger tracking, camera trap monitoring, tourist safety]
+    firmware:
+      board: rangeredge_nrf52840
+      tracker_type: rangeredge_tracker
+      tracker_type_value: 5
+      hardware_revisions: ["1.4.0-1.5.0", "1.6.0", "1.7.0", "1.8.0-1.13.0"]
+      special_builds: [rangeredge_airq_nrf52840]
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE, Iridium (optional RockBLOCK), VHF (optional)]
+    sensors: [accelerometer, temperature, reed switch, microphone, external switch port, fence port]
+    power: { type: rechargeable, batteries: "2x 18650 Li-ion", capacity_ah: 5.7, charging: [DC 5-30 V, solar] }
+    physical: { dimensions_mm: [106, 72, 41], weight_g: 220, enclosure: "PA6 glass-fibre injection moulded" }
+    repositories:
+      docs: smartparks-rangeredge-master
+      hardware: [smartparks-rangeredge-hardware]
+      mechanics: [smartparks-rangeredge-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-rangeredge-master/main/pics/rangeredge-assembly-12.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/rangeredge
+      datasheet: https://wiki.smartparks.org/devices/opencollar/rangeredge/datasheet
+      catalog: https://www.smartparks.org/product/rangeredge/
+    variants: []
+    based_on: null
+    confidence: high
+    notes: The RangerEdge board is also the electronics of TrapEdge, FenceEdge, WisentEdge, ElephantEdge and ScannerEdge.
+
+  - id: trapedge
+    display_name: TrapEdge
+    family: rangeredge
+    status: current
+    availability: on-request
+    summary: RangerEdge with an external reed switch for trap and gate monitoring; reports switch changes on FPort 19 and 20.
+    use_cases: [trap monitoring, gate monitoring]
+    firmware:
+      board: rangeredge_nrf52840
+      tracker_type: rangeredge_tracker
+      tracker_type_value: 5
+      hardware_revisions: ["1.4.0-1.5.0", "1.6.0", "1.7.0", "1.8.0-1.13.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [external reed switch, accelerometer, temperature]
+    power: { type: rechargeable, batteries: "2x 18650 Li-ion", capacity_ah: 5.7, charging: [DC 5-30 V, solar] }
+    physical: { dimensions_mm: [106, 72, 41], weight_g: null, enclosure: "PA6 (RangerEdge)" }
+    repositories:
+      docs: smartparks-rangeredge-master
+      hardware: [smartparks-rangeredge-hardware]
+      mechanics: [smartparks-rangeredge-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/trapedge
+      datasheet: null
+      catalog: null
+    variants: []
+    based_on: rangeredge
+    confidence: high
+    notes: Configured with the external switch settings (external_switch_detection_enabled and related). No dedicated repository; documented on the wiki only.
+
+  - id: fenceedge
+    display_name: FenceEdge
+    family: rangeredge
+    status: current
+    availability: catalog
+    summary: RangerEdge with a high-voltage probe board that measures electric fence pulses; reports on FPort 12.
+    use_cases: [electric fence monitoring]
+    firmware:
+      board: rangeredge_nrf52840
+      tracker_type: fenceedge_tracker
+      tracker_type_value: 10
+      hardware_revisions: ["1.4.0-1.5.0", "1.6.0", "1.7.0", "1.8.0-1.13.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [fence voltage and pulse count, accelerometer, temperature]
+    power: { type: rechargeable, batteries: "2x 18650 Li-ion", capacity_ah: 5.7, charging: [DC 5-30 V, solar] }
+    physical: { dimensions_mm: [106, 72, 41], weight_g: 245, enclosure: "PA6 (RangerEdge housing for fence monitor)" }
+    repositories:
+      docs: smartparks-fence_monitor-master
+      hardware: [smartparks-rangeredge-hardware, smartparks-fence_monitor-hardware]
+      mechanics: [smartparks-rangeredge-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-fence_monitor-master/main/pics/fence-assembly-11.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/fenceedge
+      datasheet: https://wiki.smartparks.org/devices/opencollar/fenceedge/datasheet
+      catalog: https://www.smartparks.org/product/fenceedge/
+    variants: []
+    based_on: rangeredge
+    confidence: high
+    notes: Repositories use the name "Fence Monitor"; the product is sold as FenceEdge.
+
+  - id: scanneredge
+    display_name: ScannerEdge
+    family: rangeredge
+    status: current
+    availability: catalog
+    summary: RangerEdge configured for radio scanning (contact tracing and detection), developed with Hack the Planet. ScannerFree adds Iridium.
+    use_cases: [radio scanning, detection]
+    firmware:
+      board: rangeredge_nrf52840
+      tracker_type: scanneredge_tracker
+      tracker_type_value: 7
+      hardware_revisions: ["1.4.0-1.5.0", "1.6.0", "1.7.0", "1.8.0-1.13.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE, Iridium (ScannerFree)]
+    sensors: [accelerometer, temperature, microphone]
+    power: { type: rechargeable, batteries: "2x 18650 Li-ion", capacity_ah: 5.7, charging: [DC 5-30 V, solar] }
+    physical: { dimensions_mm: [106, 72, 41], weight_g: null, enclosure: "PA6 (RangerEdge)" }
+    repositories:
+      docs: null
+      hardware: [smartparks-rangeredge-hardware]
+      mechanics: [smartparks-rangeredge-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/scanneredge
+      datasheet: null
+      catalog: https://www.smartparks.org/product/scanneredge/
+    variants: [ScannerEdge, ScannerFree (Iridium)]
+    based_on: rangeredge
+    confidence: medium
+    notes: The wiki says ScannerEdge uses "a separate firmware version"; the public firmware only shows a selectable tracker type. Whether a separate build exists is unverified.
+
+  - id: wisentedge
+    display_name: WisentEdge
+    family: rangeredge
+    status: current
+    availability: catalog
+    summary: Large collar tracker for bison, buffalo and other large grazers; RangerEdge electronics with primary batteries in a POM and aluminium housing.
+    use_cases: [large grazer tracking]
+    firmware:
+      board: rangeredge_nrf52840
+      tracker_type: wisentedge_tracker
+      tracker_type_value: 3
+      hardware_revisions: ["1.4.0-1.5.0", "1.6.0", "1.7.0", "1.8.0-1.13.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature, microphone]
+    power: { type: primary, batteries: "8x Saft LS17500", capacity_ah: 28.8, charging: [] }
+    physical: { dimensions_mm: [118, 70, 74], weight_g: 765, enclosure: "POM with aluminium lid" }
+    repositories:
+      docs: smartparks-wisentedge-master
+      hardware: [smartparks-rangeredge-hardware]
+      mechanics: [smartparks-wisentedge-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-wisentedge-master/main/pics/wisentedge-assembly-28.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/WisentEdge
+      datasheet: https://wiki.smartparks.org/devices/opencollar/WisentEdge/datasheet
+      catalog: https://www.smartparks.org/product/wisentedge-set/
+    variants: []
+    based_on: rangeredge
+    confidence: high
+    notes: ""
+
+  - id: elephantedge
+    display_name: ElephantEdge
+    family: rangeredge
+    status: current
+    availability: catalog
+    summary: Extra-large collar tracker for elephants; RangerEdge electronics plus a dedicated battery pack board. ElephantFree adds Iridium.
+    use_cases: [elephant tracking]
+    firmware:
+      board: rangeredge_nrf52840
+      tracker_type: elephantedge_tracker
+      tracker_type_value: 2
+      hardware_revisions: ["1.4.0-1.5.0", "1.6.0", "1.7.0", "1.8.0-1.13.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE, Iridium (ElephantFree)]
+    sensors: [accelerometer, temperature, microphone]
+    power: { type: primary, batteries: "16x Saft LS17500", capacity_ah: 57.6, charging: [] }
+    physical: { dimensions_mm: [165, 100, 79], weight_g: 1560, enclosure: "POM with aluminium lid" }
+    repositories:
+      docs: smartparks-elephantedge-master
+      hardware: [smartparks-rangeredge-hardware, smartparks-elephantedge_battery_pack-hardware]
+      mechanics: [smartparks-elephantedge-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-elephantedge-master/main/pics/elephantedge-assembly-12.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/ElephantEdge
+      datasheet: https://wiki.smartparks.org/devices/opencollar/ElephantEdge/datasheet
+      catalog: https://www.smartparks.org/product/elephantedge-tracker/
+    variants: [ElephantEdge, ElephantFree (Iridium)]
+    based_on: rangeredge
+    confidence: high
+    notes: Started as the Hackster.io ElephantEdge challenge (2020).
+
+  - id: rangeredge-airq
+    display_name: RangerEdge AirQ
+    family: experimental
+    status: experimental
+    availability: prototype
+    summary: RangerEdge with an air-quality extension board (BMV080 particulate and BME690 gas sensors) on the I2C port; reports on FPort 21.
+    use_cases: [air quality, fire watch]
+    firmware:
+      board: rangeredge_airq_nrf52840
+      tracker_type: rangeredge_tracker
+      tracker_type_value: 5
+      hardware_revisions: ["1.4.0-1.13.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [particulate matter (BMV080), gas (BME690), accelerometer, temperature]
+    power: { type: rechargeable, batteries: "2x 18650 Li-ion", capacity_ah: 5.7, charging: [DC 5-30 V, solar] }
+    physical: { dimensions_mm: null, weight_g: null, enclosure: null }
+    repositories:
+      docs: null
+      hardware: [smartparks-rangeredge-hardware]
+      mechanics: []
+    tools: { configure: [ble-settings-app], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: null
+      datasheet: null
+      catalog: null
+    variants: []
+    based_on: rangeredge
+    confidence: low
+    notes: Separate release asset (air-quality-vX.zip); not built by the CI release script because of Bosch licences. The extension board repository was not found in the organization.
+
+  - id: collaredge
+    display_name: CollarEdge 38mm and 50mm
+    family: collaredge
+    status: current
+    availability: catalog
+    summary: Resin-encapsulated collar trackers on BioThane belting for medium and large predators; one or two D-cells.
+    use_cases: [cheetah, leopard, hyena, lion, wild dog]
+    firmware:
+      board: collaredge_nrf52840
+      tracker_type: collaredge_tracker
+      tracker_type_value: 8
+      hardware_revisions: ["1.0.0", "1.1.0-1.3.0", "1.4.0-1.7.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE, VHF (optional external antenna)]
+    sensors: [accelerometer, temperature, reed switch]
+    power: { type: primary, batteries: "1x or 2x Saft LS33600 (D-cell)", capacity_ah: 17.0, charging: [] }
+    physical: { dimensions_mm: [230, 180, 51], weight_g: null, enclosure: "BioThane collar, polyurethane resin" }
+    repositories:
+      docs: smartparks-collaredge_38mm_50mm-master
+      hardware: [smartparks-collaredge-hardware]
+      mechanics: [smartparks-collaredge_38mm_50mm-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-collaredge_38mm_50mm-master/main/pics/collaredge_38mm-assembly-14.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/collaredge
+      datasheet: https://wiki.smartparks.org/devices/opencollar/collaredge/38-1D/datasheet
+      catalog: https://www.smartparks.org/product/collaredge-38mm-1d/
+    variants: [38mm-1D (1 D-cell, 17 Ah), 38mm-2D (2 D-cells, 34 Ah), 50mm-2D (2 D-cells, 34 Ah), HippoEdge 38mm-1D (neoprene, pygmy hippo)]
+    based_on: null
+    confidence: high
+    notes: Dimensions are for the 38mm collar; the 50mm collar is 310 x 260 x 92 mm. The electronics unit alone is 101 x 69 x 51 mm (38mm) or 107 x 64 x 92 mm (50mm).
+
+  - id: collaredge-free
+    display_name: CollarEdge Free
+    family: collaredge
+    status: current
+    availability: catalog
+    summary: The most rugged collar; 50mm belting with LoRaWAN, Iridium satellite (RockBLOCK 9603), BLE and VHF, three D-cells.
+    use_cases: [lion, remote areas without LoRaWAN coverage]
+    firmware:
+      board: freeedge_nrf52840
+      tracker_type: freeedge_tracker
+      tracker_type_value: 9
+      hardware_revisions: ["1.0.0-1.2.0", "1.3.0-1.5.0", "1.6.0", "1.7.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, Iridium SBD, BLE, VHF]
+    sensors: [accelerometer, temperature, reed switch]
+    power: { type: primary, batteries: "3x Saft LS33600 (D-cell)", capacity_ah: 51.0, charging: [] }
+    physical: { dimensions_mm: [310, 210, 80], weight_g: null, enclosure: "BioThane collar, polyurethane resin, top and bottom unit" }
+    repositories:
+      docs: smartparks-collaredge_free-master
+      hardware: [smartparks-freeedge-hardware]
+      mechanics: [smartparks-collaredge_free-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-collaredge_free-master/main/pics/collaredge_free-assembly-36.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/collaredge/free
+      datasheet: https://wiki.smartparks.org/devices/opencollar/collaredge/free/datasheet
+      catalog: https://www.smartparks.org/product/collaredge-free/
+    variants: [CollarEdge Free 50mm-3D]
+    based_on: null
+    confidence: high
+    notes: Firmware and hardware call this board "FreeEdge".
+
+  - id: collaredge-pico
+    display_name: CollarEdge Pico
+    family: collaredge
+    status: current
+    availability: catalog
+    summary: Ultra-small collar tracker for hares, cats, foxes and raccoons; RhinoEdge Cube electronics with a separate battery unit on 16mm or 22mm belting.
+    use_cases: [hare, cat, raccoon, fox]
+    firmware:
+      board: rhinoedge_nrf52840
+      tracker_type: collaredgepico_tracker
+      tracker_type_value: 12
+      hardware_revisions: ["1.4.0-1.6.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature, reed switch]
+    power: { type: primary, batteries: "1x Saft LM17500 (A-cell) or C-cell", capacity_ah: 3.0, charging: [] }
+    physical: { dimensions_mm: [45, 22, 15], weight_g: 5, enclosure: "PA12, polyurethane resin; battery unit 56 x 22 x 30 mm" }
+    repositories:
+      docs: smartparks-collaredge_pico-master
+      hardware: [smartparks-rhinoedge_cube-hardware]
+      mechanics: [smartparks-collaredge_pico-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-collaredge_pico-master/main/pics/collaredge_pico-assembly-13.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/collaredge/pico-16-1A
+      datasheet: https://wiki.smartparks.org/devices/opencollar/collaredge/pico-16-1A/datasheet
+      catalog: https://www.smartparks.org/product/collaredge-pico/
+    variants: [Pico 16mm-1A (A-cell), Pico 22mm-1C (C-cell)]
+    based_on: rhinoedge-cube
+    confidence: high
+    notes: ""
+
+  - id: collaredge-nano
+    display_name: CollarEdge Nano
+    family: collaredge
+    status: current
+    availability: catalog
+    summary: Small collar tracker for deer, sheep and small predators; RhinoEdge Cube electronics integrated in the battery unit on 38mm belting.
+    use_cases: [deer, sheep, cheetah, leopard, wild dog]
+    firmware:
+      board: rhinoedge_nrf52840
+      tracker_type: collaredgenano_tracker
+      tracker_type_value: 13
+      hardware_revisions: ["1.4.0-1.6.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN (external antenna in belting), BLE]
+    sensors: [accelerometer, temperature, reed switch]
+    power: { type: primary, batteries: "1x C-cell (Nano 1C) or 1x D-cell (Nano 1D)", capacity_ah: null, charging: [] }
+    physical: { dimensions_mm: [240, 160, 60], weight_g: 265, enclosure: "BioThane collar, resin (values for Nano 38mm-1C set)" }
+    repositories:
+      docs: null
+      hardware: [smartparks-rhinoedge_cube-hardware]
+      mechanics: []
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/collaredge/nano-38-1C
+      datasheet: https://wiki.smartparks.org/devices/opencollar/collaredge/nano-38-1C/datasheet
+      catalog: https://www.smartparks.org/product/collaredge-nano-c/
+    variants: [Nano 38mm-1C, Nano 38mm-1D]
+    based_on: rhinoedge-cube
+    confidence: medium
+    notes: No master or mechanics repository was found for the Nano. The wiki states it uses the RhinoEdge Cube PCB.
+
+  - id: rhinoedge-cube
+    display_name: RhinoEdge Cube
+    family: rhinoedge
+    status: current
+    availability: catalog
+    summary: The smallest OpenCollar device, a potted GPS and LoRaWAN horn implant for rhinos.
+    use_cases: [rhino horn implant]
+    firmware:
+      board: rhinoedge_nrf52840
+      tracker_type: rhinoedge_tracker
+      tracker_type_value: 1
+      hardware_revisions: ["1.4.0-1.6.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature, reed switch]
+    power: { type: primary, batteries: "1x Saft LS14250", capacity_ah: 1.2, charging: [] }
+    physical: { dimensions_mm: [31, 24, 21], weight_g: 27, enclosure: "PA12, polyurethane resin" }
+    repositories:
+      docs: smartparks-rhinoedge_cube-master
+      hardware: [smartparks-rhinoedge_cube-hardware]
+      mechanics: [smartparks-rhinoedge_cube-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-rhinoedge_cube-master/main/pics/rhinoedge_cube-assembly-10.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/rhinoedge/rhinoedge_cube
+      datasheet: https://wiki.smartparks.org/devices/opencollar/rhinoedge/rhinoedge_cube/datasheet
+      catalog: https://www.smartparks.org/product/rhinoedge-horn-implant/
+    variants: []
+    based_on: null
+    confidence: high
+    notes: The Cube board is also used by CollarEdge Pico and Nano and by the experimental Baboon, Pangolin and Horse trackers.
+
+  - id: rhinoedge-puck35
+    display_name: RhinoEdge Puck 35
+    family: rhinoedge
+    status: current
+    availability: catalog
+    summary: Round horn implant with three times the battery of the Cube; sold as "Puck 34".
+    use_cases: [rhino horn implant]
+    firmware:
+      board: rhinopuck35_nrf52840
+      tracker_type: rhinopuck_tracker
+      tracker_type_value: 6
+      hardware_revisions: ["1.2.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature, reed switch]
+    power: { type: primary, batteries: "3x Saft LS14250", capacity_ah: 3.6, charging: [] }
+    physical: { dimensions_mm: [35, 35, 35], weight_g: 43, enclosure: "PA12, diameter 35 mm, height 35 mm" }
+    repositories:
+      docs: smartparks-rhinoedge_puck35-master
+      hardware: [smartparks-rhinoedge_puck35-hardware]
+      mechanics: [smartparks-rhinoedge_puck35-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-rhinoedge_puck35-master/main/pics/rhinoedge_puck35-assembly-18.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/rhinoedge/rhinoedge_puck_34
+      datasheet: https://wiki.smartparks.org/devices/opencollar/rhinoedge/rhinoedge_puck_34/datasheet
+      catalog: https://www.smartparks.org/product/rhinoedge-puck-34-horn-implant/
+    variants: []
+    based_on: null
+    confidence: high
+    notes: Repositories and firmware say Puck35; wiki and catalog say Puck 34. Same device.
+
+  - id: rhinoedge-puck50
+    display_name: RhinoEdge Puck 50
+    family: rhinoedge
+    status: current
+    availability: catalog
+    summary: Flat round horn implant with the largest battery of the RhinoEdge range.
+    use_cases: [rhino horn implant, HorseEdge mane attachment]
+    firmware:
+      board: rhinopuck_nrf52840
+      tracker_type: rhinopuck_tracker
+      tracker_type_value: 6
+      hardware_revisions: ["1.3.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, Wi-Fi scan, BLE scan]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature, reed switch]
+    power: { type: primary, batteries: "2x Saft LS17330", capacity_ah: 4.2, charging: [] }
+    physical: { dimensions_mm: [49, 49, 25], weight_g: 54, enclosure: "PA12, diameter 49 mm, height 25 mm" }
+    repositories:
+      docs: smartparks-rhinoedge_puck50-master
+      hardware: [smartparks-rhinoedge_puck50-hardware]
+      mechanics: [smartparks-rhinoedge_puck50-mechanics]
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: https://raw.githubusercontent.com/SmartParksOrg/smartparks-rhinoedge_puck50-master/main/pics/rhinoedge_puck50-assembly-10.jpg
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/rhinoedge/rhinoedge_puck_50
+      datasheet: https://wiki.smartparks.org/devices/opencollar/rhinoedge/rhinoedge_puck_50/datasheet
+      catalog: https://www.smartparks.org/product/rhinoedge-puck-50-horn-implant/
+    variants: []
+    based_on: null
+    confidence: high
+    notes: The firmware board name is rhinopuck_nrf52840 (no size suffix).
+
+  - id: horseedge
+    display_name: HorseEdge
+    family: experimental
+    status: experimental
+    availability: catalog
+    summary: Tracker attached to the mane of wild horses as an alternative to collars, which stallions destroy.
+    use_cases: [wild horse tracking]
+    firmware:
+      board: rhinoedge_nrf52840
+      tracker_type: horseedge_tracker
+      tracker_type_value: 11
+      hardware_revisions: ["1.4.0-1.6.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature]
+    power: { type: primary, batteries: null, capacity_ah: null, charging: [] }
+    physical: { dimensions_mm: null, weight_g: null, enclosure: null }
+    repositories:
+      docs: null
+      hardware: [smartparks-rhinoedge_cube-hardware]
+      mechanics: []
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/HorseEdge
+      datasheet: null
+      catalog: https://www.smartparks.org/product/horseedge/
+    variants: []
+    based_on: rhinoedge-cube
+    confidence: low
+    notes: Sources conflict. The firmware allows the HorseEdge tracker type only on the RhinoEdge Cube board; the wiki describes a RhinoEdge Puck 50 attached to the mane. To be confirmed.
+
+  - id: baboonedge
+    display_name: BaboonEdge
+    family: experimental
+    status: experimental
+    availability: on-request
+    summary: Baboon collar prototype (22 mm collar, 3x AAA) intended for use with a cardiac monitoring (CMDQ) tag.
+    use_cases: [baboon tracking, cardiac monitoring research]
+    firmware:
+      board: rhinoedge_nrf52840
+      tracker_type: baboonedge_tracker
+      tracker_type_value: 14
+      hardware_revisions: ["1.4.0-1.6.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS, BLE scan]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature]
+    power: { type: primary, batteries: "3x AAA", capacity_ah: null, charging: [] }
+    physical: { dimensions_mm: null, weight_g: 120, enclosure: "22 mm collar" }
+    repositories:
+      docs: null
+      hardware: [smartparks-rhinoedge_cube-hardware]
+      mechanics: []
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/baboonedge
+      datasheet: null
+      catalog: null
+    variants: []
+    based_on: rhinoedge-cube
+    confidence: medium
+    notes: Hardware basis inferred from the firmware tracker type table.
+
+  - id: pangolinedge
+    display_name: PangolinEdge
+    family: experimental
+    status: experimental
+    availability: prototype
+    summary: Pangolin tracker prototype using the outdoor-detection feature to save power while the animal is underground.
+    use_cases: [pangolin tracking]
+    firmware:
+      board: rhinoedge_nrf52840
+      tracker_type: pangolinedge_tracker
+      tracker_type_value: 15
+      hardware_revisions: ["1.4.0-1.6.0"]
+      special_builds: []
+    positioning: [u-blox GNSS, LR11xx GNSS]
+    connectivity: [LoRaWAN, BLE]
+    sensors: [accelerometer, temperature, outdoor detection (temperature, acceleration, time of day)]
+    power: { type: primary, batteries: null, capacity_ah: null, charging: [] }
+    physical: { dimensions_mm: [55, 35, 25], weight_g: 65, enclosure: null }
+    repositories:
+      docs: null
+      hardware: [smartparks-rhinoedge_cube-hardware]
+      mechanics: []
+    tools: { configure: [ble-settings-app, connect-app], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/PangolinEdge
+      datasheet: null
+      catalog: null
+    variants: []
+    based_on: rhinoedge-cube
+    confidence: medium
+    notes: Hardware basis inferred from the firmware tracker type table. Field tests in Namibia reported on the wiki.
+
+  - id: edgetag
+    display_name: EdgeTag
+    family: experimental
+    status: experimental
+    availability: catalog
+    summary: Low-power Bluetooth tag detected by the BLE scanning (contact tracing) feature of Edge devices.
+    use_cases: [contact tracing, disease transmission research]
+    firmware:
+      board: null
+      tracker_type: null
+      tracker_type_value: null
+      hardware_revisions: []
+      special_builds: []
+    positioning: [none (detected by scanning Edge devices)]
+    connectivity: [BLE advertisement]
+    sensors: []
+    power: { type: primary, batteries: null, capacity_ah: null, charging: [] }
+    physical: { dimensions_mm: [40, 31, 15], weight_g: 18, enclosure: null }
+    repositories:
+      docs: null
+      hardware: []
+      mechanics: []
+    tools: { configure: [], decode: [raw-logs-decoder] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/edgetag
+      datasheet: null
+      catalog: https://www.smartparks.org/product/edgetag/
+    variants: []
+    based_on: null
+    confidence: low
+    notes: No repository, firmware or hardware information was found; the tag does not run the OpenCollar Edge firmware.
+
+  - id: dropoff
+    display_name: Drop-off mechanism
+    family: experimental
+    status: experimental
+    availability: prototype
+    summary: Remote collar release mechanism under development since 2020.
+    use_cases: [collar release]
+    firmware:
+      board: null
+      tracker_type: null
+      tracker_type_value: null
+      hardware_revisions: []
+      special_builds: []
+    positioning: []
+    connectivity: []
+    sensors: []
+    power: { type: null, batteries: null, capacity_ah: null, charging: [] }
+    physical: { dimensions_mm: null, weight_g: null, enclosure: null }
+    repositories:
+      docs: null
+      hardware: []
+      mechanics: []
+    tools: { configure: [], decode: [] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/opencollar/dropoff
+      datasheet: null
+      catalog: null
+    variants: []
+    based_on: null
+    confidence: low
+    notes: Design notes exist only in the archived IRNAS GitBook.
+
+  - id: opencollar-gen1
+    display_name: First-generation OpenCollar (legacy)
+    family: legacy
+    status: legacy
+    availability: discontinued
+    summary: The pre-Edge OpenCollar tracker (STM32, firmware 2.x and 3), lion and rhino legacy trackers and the first fence monitor. Different LoRaWAN protocol.
+    use_cases: [historical]
+    firmware:
+      board: null
+      tracker_type: null
+      tracker_type_value: null
+      hardware_revisions: []
+      special_builds: []
+    positioning: [GPS]
+    connectivity: [LoRaWAN]
+    sensors: [accelerometer, reed switch]
+    power: { type: null, batteries: null, capacity_ah: null, charging: [] }
+    physical: { dimensions_mm: null, weight_g: null, enclosure: null }
+    repositories:
+      docs: null
+      hardware: []
+      mechanics: []
+    tools: { configure: [], decode: [toolset] }
+    image: null
+    external_links:
+      wiki: https://wiki.smartparks.org/devices/legacy/opencollar-gen1
+      datasheet: null
+      catalog: null
+    variants: [OpenCollar Tracker v1, Lion tracker, Rhino tracker, Fence v2]
+    based_on: null
+    confidence: high
+    notes: Decoders and encoders live in smartparks-toolset and in the TTN device repository fork (firmware 2.6). Early Edge firmware (2021) also had elephantedge, wisentedge and cattracker boards that no longer exist.

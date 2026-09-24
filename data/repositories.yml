@@ -1,0 +1,950 @@
+# OpenCollar repository index. Hand-maintained. Release data is fetched separately into data/generated/releases.json.
+# Fields: name (GitHub name), display_name, category (firmware|device-docs|hardware|mechanics|tool|decoder|integration|platform|archive|hub),
+# status (current|maintained|legacy|experimental|archived|private), visibility, description, license (SPDX or none), default_branch,
+# devices (ids from devices.yml), audience (user|developer|hardware), links, releases.track, related, notes.
+repositories:
+  - name: smartparks-opencollar-edge-fw
+    display_name: "OpenCollar Edge firmware (development)"
+    category: firmware
+    status: private
+    visibility: private
+    description: "Repository for Smart Parks OpenCollar firmware development"
+    license: "none"
+    default_branch: main
+    last_push: "2026-09-24"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw
+      releases: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-opencollar-edge-fw-public]
+    notes: "Private development repository with CI. Each release is published to the public mirror by the publish-public-release workflow."
+  - name: smartparks-opencollar-edge-fw-public
+    display_name: "OpenCollar Edge firmware"
+    category: firmware
+    status: current
+    visibility: public
+    description: "Public repository for the Smart Parks OpenCollar firmware"
+    license: "MPL-2.0"
+    default_branch: main
+    last_push: "2026-09-24"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [developer, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public
+      releases: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases
+      docs: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public#readme
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["open-collar-*.zip", "open-collar-*-debug.zip", "open-collar-*-prov.zip", "air-quality-*.zip", "settings-*.json", "ttn_decoder-*.js"]
+    related: [ble-settings-app, raw_logs_decoder, smartparks-connect-app]
+    notes: "Public release mirror since v7.3.0. Release assets include firmware bundles, settings-vX.json and ttn_decoder-vX.js."
+  - name: smartparks-opencollar-edge-fw-old-backup
+    display_name: "Firmware history backup (to v6.12.1)"
+    category: archive
+    status: archived
+    visibility: private
+    description: "Backup of Repository for Smart Parks OpenCollar firmware development"
+    license: "none"
+    default_branch: main
+    last_push: "2025-03-27"
+    devices: []
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-old-backup
+      releases: https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-old-backup/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-opencollar-edge-fw]
+    notes: "Private backup of the firmware repository up to v6.12.1 (2025-03). Not referenced anywhere."
+  - name: smartparks-collaredge_38mm_50mm-master
+    display_name: "CollarEdge 38mm and 50mm: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar CollarEdge 38mm and 50mm Trackers"
+    license: "none"
+    default_branch: main
+    last_push: "2026-03-17"
+    devices: [collaredge]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-collaredge_38mm_50mm-master
+      releases: https://github.com/SmartParksOrg/smartparks-collaredge_38mm_50mm-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-collaredge-hardware, smartparks-collaredge_38mm_50mm-mechanics]
+    notes: ""
+  - name: smartparks-collaredge_free-master
+    display_name: "CollarEdge Free: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar CollarEdge Free Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2026-04-02"
+    devices: [collaredge-free]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-collaredge_free-master
+      releases: https://github.com/SmartParksOrg/smartparks-collaredge_free-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-freeedge-hardware, smartparks-collaredge_free-mechanics]
+    notes: ""
+  - name: smartparks-collaredge_pico-master
+    display_name: "CollarEdge Pico: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar CollarEdge Pico Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2025-12-10"
+    devices: [collaredge-pico]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-collaredge_pico-master
+      releases: https://github.com/SmartParksOrg/smartparks-collaredge_pico-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rhinoedge_cube-hardware, smartparks-collaredge_pico-mechanics]
+    notes: "Uses RhinoEdge Cube electronics."
+  - name: smartparks-rangeredge-master
+    display_name: "RangerEdge: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar RangerEdge Tracker"
+    license: "CERN-OHL-W-2.0 / MPL-2.0 / CC-BY-SA-4.0"
+    default_branch: main
+    last_push: "2025-12-12"
+    devices: [rangeredge, trapedge]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rangeredge-master
+      releases: https://github.com/SmartParksOrg/smartparks-rangeredge-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rangeredge-hardware, smartparks-rangeredge-mechanics]
+    notes: "Only device repository with LICENSE files (CERN-OHL-W-2.0, MPL-2.0, CC-BY-SA-4.0) and a trademark notice."
+  - name: smartparks-wisentedge-master
+    display_name: "WisentEdge: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar WisentEdge Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2025-12-10"
+    devices: [wisentedge]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-wisentedge-master
+      releases: https://github.com/SmartParksOrg/smartparks-wisentedge-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rangeredge-hardware, smartparks-wisentedge-mechanics]
+    notes: "RangerEdge electronics in a POM/aluminium housing."
+  - name: smartparks-elephantedge-master
+    display_name: "ElephantEdge: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar ElephantEdge Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2025-12-10"
+    devices: [elephantedge]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-elephantedge-master
+      releases: https://github.com/SmartParksOrg/smartparks-elephantedge-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rangeredge-hardware, smartparks-elephantedge_battery_pack-hardware, smartparks-elephantedge-mechanics]
+    notes: "RangerEdge electronics plus the ElephantEdge battery pack board."
+  - name: smartparks-rhinoedge_cube-master
+    display_name: "RhinoEdge Cube: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar RhinoEdge Cube Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2025-12-10"
+    devices: [rhinoedge-cube]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-master
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rhinoedge_cube-hardware, smartparks-rhinoedge_cube-mechanics]
+    notes: ""
+  - name: smartparks-rhinoedge_puck35-master
+    display_name: "RhinoEdge Puck 35: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar RhinoEdge Puck35 Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2025-12-10"
+    devices: [rhinoedge-puck35]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-master
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rhinoedge_puck35-hardware, smartparks-rhinoedge_puck35-mechanics]
+    notes: "Sold as RhinoEdge Puck 34 on the wiki and in the catalog."
+  - name: smartparks-rhinoedge_puck50-master
+    display_name: "RhinoEdge Puck 50: documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar RhinoEdge Puck50 Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2025-12-10"
+    devices: [rhinoedge-puck50]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-master
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rhinoedge_puck50-hardware, smartparks-rhinoedge_puck50-mechanics]
+    notes: ""
+  - name: smartparks-fence_monitor-master
+    display_name: "FenceEdge (Fence Monitor): documentation, BOM, assembly"
+    category: device-docs
+    status: current
+    visibility: public
+    description: "Master repository for Smart Parks OpenCollar Fence Monitor"
+    license: "none"
+    default_branch: main
+    last_push: "2025-12-10"
+    devices: [fenceedge]
+    audience: [hardware, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-fence_monitor-master
+      releases: https://github.com/SmartParksOrg/smartparks-fence_monitor-master/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rangeredge-hardware, smartparks-fence_monitor-hardware, smartparks-rangeredge-mechanics]
+    notes: "RangerEdge plus the fence monitor board; sold as FenceEdge."
+  - name: smartparks-collaredge-hardware
+    display_name: "CollarEdge electronics (collaredge_nrf52840)"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar CollarEdge Tracker"
+    license: "none"
+    default_branch: master
+    last_push: "2025-12-05"
+    devices: [collaredge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-collaredge-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-collaredge-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip", "SRC-*.zip"]
+    related: [smartparks-collaredge_38mm_50mm-master]
+    notes: "Altium project. Changelog kept in the README. Includes a BuoyFish production variant."
+  - name: smartparks-rangeredge-hardware
+    display_name: "RangerEdge electronics (rangeredge_nrf52840)"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar RangerEdge Tracker"
+    license: "none"
+    default_branch: master
+    last_push: "2025-12-05"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rangeredge-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-rangeredge-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip", "SRC-*.zip"]
+    related: [smartparks-rangeredge-master]
+    notes: "Altium project. Board used by RangerEdge, TrapEdge, FenceEdge, WisentEdge, ElephantEdge and ScannerEdge."
+  - name: smartparks-freeedge-hardware
+    display_name: "FreeEdge electronics (freeedge_nrf52840)"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar FreeEdge Tracker"
+    license: "none"
+    default_branch: master
+    last_push: "2025-04-08"
+    devices: [collaredge-free]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-freeedge-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-freeedge-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip", "SRC-*.zip"]
+    related: [smartparks-collaredge_free-master]
+    notes: "Altium project with RockBLOCK (Iridium) sheet. Board of the CollarEdge Free."
+  - name: smartparks-rhinoedge_cube-hardware
+    display_name: "RhinoEdge Cube electronics (rhinoedge_nrf52840)"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar RhinoEdge Cube Tracker"
+    license: "none"
+    default_branch: master
+    last_push: "2025-04-08"
+    devices: [rhinoedge-cube, collaredge-pico, collaredge-nano, baboonedge, pangolinedge, horseedge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip", "SRC-*.zip"]
+    related: [smartparks-rhinoedge_cube-master, smartparks-collaredge_pico-master]
+    notes: "Altium project. Board also used by CollarEdge Pico and Nano and by the experimental Baboon, Pangolin and Horse trackers."
+  - name: smartparks-rhinoedge_puck35-hardware
+    display_name: "RhinoEdge Puck 35 electronics (rhinopuck35_nrf52840)"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar RhinoEdge Puck35 Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [rhinoedge-puck35]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip", "SRC-*.zip"]
+    related: [smartparks-rhinoedge_puck35-master]
+    notes: ""
+  - name: smartparks-rhinoedge_puck50-hardware
+    display_name: "RhinoEdge Puck 50 electronics (rhinopuck_nrf52840)"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar RhinoEdge Puck50 Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [rhinoedge-puck50]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip", "SRC-*.zip"]
+    related: [smartparks-rhinoedge_puck50-master]
+    notes: ""
+  - name: smartparks-elephantedge_battery_pack-hardware
+    display_name: "ElephantEdge battery pack electronics"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar ElephantEdge Battery Pack"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [elephantedge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-elephantedge_battery_pack-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-elephantedge_battery_pack-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip", "SRC-*.zip"]
+    related: [smartparks-elephantedge-master]
+    notes: ""
+  - name: smartparks-fence_monitor-hardware
+    display_name: "Fence monitor electronics (high-voltage probe)"
+    category: hardware
+    status: current
+    visibility: public
+    description: "Hardware repository for Smart Parks OpenCollar Fence Monitor"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [fenceedge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-fence_monitor-hardware
+      releases: https://github.com/SmartParksOrg/smartparks-fence_monitor-hardware/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: ["FAB-*.zip", "PCBA-*.zip"]
+    related: [smartparks-fence_monitor-master]
+    notes: ""
+  - name: smartparks-collaredge_38mm_50mm-mechanics
+    display_name: "CollarEdge 38mm and 50mm mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar CollarEdge 38mm and 50mm Trackers"
+    license: "none"
+    default_branch: main
+    last_push: "2026-03-17"
+    devices: [collaredge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-collaredge_38mm_50mm-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-collaredge_38mm_50mm-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-collaredge_38mm_50mm-master]
+    notes: "Moulds, spacers, covers, collar patterns (STEP, STL, DXF, PDF)."
+  - name: smartparks-collaredge_free-mechanics
+    display_name: "CollarEdge Free mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar CollarEdge Free Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2026-04-02"
+    devices: [collaredge-free]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-collaredge_free-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-collaredge_free-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-collaredge_free-master]
+    notes: ""
+  - name: smartparks-collaredge_pico-mechanics
+    display_name: "CollarEdge Pico mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar CollarEdge Pico Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [collaredge-pico]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-collaredge_pico-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-collaredge_pico-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-collaredge_pico-master]
+    notes: ""
+  - name: smartparks-rangeredge-mechanics
+    display_name: "RangerEdge mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar RangerEdge Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [rangeredge, trapedge, fenceedge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rangeredge-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-rangeredge-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rangeredge-master]
+    notes: "Also contains the fence monitor housing and antenna spacer."
+  - name: smartparks-wisentedge-mechanics
+    display_name: "WisentEdge mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar WisentEdge Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2026-03-20"
+    devices: [wisentedge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-wisentedge-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-wisentedge-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-wisentedge-master]
+    notes: ""
+  - name: smartparks-elephantedge-mechanics
+    display_name: "ElephantEdge mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar ElephantEdge Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [elephantedge]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-elephantedge-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-elephantedge-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-elephantedge-master]
+    notes: ""
+  - name: smartparks-rhinoedge_cube-mechanics
+    display_name: "RhinoEdge Cube mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar RhinoEdge Cube Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [rhinoedge-cube]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rhinoedge_cube-master]
+    notes: ""
+  - name: smartparks-rhinoedge_puck35-mechanics
+    display_name: "RhinoEdge Puck 35 mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar RhinoEdge Puck35 Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [rhinoedge-puck35]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rhinoedge_puck35-master]
+    notes: ""
+  - name: smartparks-rhinoedge_puck50-mechanics
+    display_name: "RhinoEdge Puck 50 mechanics"
+    category: mechanics
+    status: current
+    visibility: public
+    description: "Mechanics repository for Smart Parks OpenCollar RhinoEdge Puck50 Tracker"
+    license: "none"
+    default_branch: main
+    last_push: "2024-07-19"
+    devices: [rhinoedge-puck50]
+    audience: [hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-mechanics
+      releases: https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-mechanics/releases
+      docs: null
+      app: null
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-rhinoedge_puck50-master]
+    notes: ""
+  - name: ble-settings-app
+    display_name: "Smart Parks Connect ShortRange (BLE web app)"
+    category: tool
+    status: current
+    visibility: public
+    description: "A simple Web Application that uses Web BLE to connect, read and write settings of a OpenCollar Edge device."
+    license: "GPL-3.0"
+    default_branch: main
+    last_push: "2026-09-21"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [user]
+    links:
+      repo: https://github.com/SmartParksOrg/ble-settings-app
+      releases: https://github.com/SmartParksOrg/ble-settings-app/releases
+      docs: null
+      app: https://smartparksorg.github.io/ble-settings-app/
+    releases:
+      track: true
+      asset_patterns: []
+    related: [smartparks-opencollar-edge-fw-public, raw_logs_decoder]
+    notes: "Web Bluetooth app: configure settings, send commands, download logs, update firmware (DFU) with bundled binaries, HEX composer. Supports firmware 4.4.2 to 8.0.0."
+  - name: raw_logs_decoder
+    display_name: "Raw logs decoder"
+    category: tool
+    status: current
+    visibility: public
+    description: "A simple Web Application to decode, export and analyse the raw logs of OpenCollar Edge devices."
+    license: "MIT"
+    default_branch: main
+    last_push: "2026-07-08"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [user, developer]
+    links:
+      repo: https://github.com/SmartParksOrg/raw_logs_decoder
+      releases: https://github.com/SmartParksOrg/raw_logs_decoder/releases
+      docs: null
+      app: https://smartparksorg.github.io/raw_logs_decoder/
+    releases:
+      track: true
+      asset_patterns: []
+    related: [ble-settings-app, smartparks-opencollar-edge-fw-public]
+    notes: "Decode raw log files exported from a device with the bundled ttn_decoder versions; export CSV, JSON, XLSX; charts and map."
+  - name: opencollar-acc-calculator
+    display_name: "Accelerometer calculator"
+    category: tool
+    status: experimental
+    visibility: public
+    description: "A simple Web Application to calculate the use of the on-board Accelerometer."
+    license: "MIT"
+    default_branch: main
+    last_push: "2026-03-01"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/opencollar-acc-calculator
+      releases: https://github.com/SmartParksOrg/opencollar-acc-calculator/releases
+      docs: null
+      app: https://smartparksorg.github.io/opencollar-acc-calculator/
+    releases:
+      track: false
+      asset_patterns: []
+    related: [arduino-ble-accelerometer]
+    notes: "Design study for an accelerometer motion summary: LIS2DW12 sampling, nRF52 duty cycle, flash and payload sizing. Not implemented in the firmware."
+  - name: smartparks-connect-app
+    display_name: "Smart Parks Connect App (Android)"
+    category: tool
+    status: private
+    visibility: private
+    description: "Repository for Smart Parks Connect App mobile application"
+    license: "GPL-3.0"
+    default_branch: dev
+    last_push: "2026-05-29"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-connect-app
+      releases: https://github.com/SmartParksOrg/smartparks-connect-app/releases
+      docs: https://wiki.smartparks.org/devices/opencollar/connect-app
+      app: https://play.google.com/store/apps/details?id=com.smartparks_connect_app
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-opencollar-edge-fw-public]
+    notes: "Android app (React Native): configure over BLE, read logs, update firmware from phone storage or from files.smartparks.org. Source is private; app is on Google Play."
+  - name: smartparks-toolset
+    display_name: "Smart Parks Toolset (battery calculator, payload decoder and encoder)"
+    category: tool
+    status: legacy
+    visibility: public
+    description: "Toolset for Smart Parks devices"
+    license: "MIT"
+    default_branch: main
+    last_push: "2024-07-27"
+    devices: []
+    audience: [user, developer]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-toolset
+      releases: https://github.com/SmartParksOrg/smartparks-toolset/releases
+      docs: null
+      app: https://toolset.smartparks.org/
+    releases:
+      track: false
+      asset_patterns: []
+    related: [lorawan-devices]
+    notes: "Static site with a battery calculator and LoRaWAN decoder/encoder apps. Holds first-generation decoders and ChirpStack v4 Edge decoders up to firmware 6.5.0. Last change 2024-07."
+  - name: smartparks-connect-web
+    display_name: "Smart Parks Connect Web (ChirpStack v3 and RockBLOCK downlinks)"
+    category: tool
+    status: legacy
+    visibility: public
+    description: "Web application for connecting to Smart Parks OpenCollar sensors."
+    license: "GPL-3.0"
+    default_branch: main
+    last_push: "2023-12-13"
+    devices: []
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-connect-web
+      releases: https://github.com/SmartParksOrg/smartparks-connect-web/releases
+      docs: null
+      app: https://connect.smartparks.org
+    releases:
+      track: false
+      asset_patterns: []
+    related: []
+    notes: "Go and Vue application that composes settings and command downlinks for ChirpStack v3 and RockBLOCK. Settings templates 2.10, 2.15 and 3.2. Last change 2023-12."
+  - name: smartparks-lp0-replay-app
+    display_name: "LP0 replay tool"
+    category: tool
+    status: maintained
+    visibility: public
+    description: "A simple Web Application that acts as an UPD packet forwarder loaded with an lp0 log file."
+    license: "MIT"
+    default_branch: main
+    last_push: "2026-01-20"
+    devices: []
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-lp0-replay-app
+      releases: https://github.com/SmartParksOrg/smartparks-lp0-replay-app/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-lp0-platform]
+    notes: "Flask app that replays, decrypts and decodes LoRaWAN uplinks from Semtech UDP JSONL logs. Runs locally or in Docker."
+  - name: smartparks-lp0-platform
+    display_name: "LP0 platform (rebuild of the replay tool)"
+    category: tool
+    status: experimental
+    visibility: public
+    description: ""
+    license: "MIT"
+    default_branch: main
+    last_push: "2026-01-11"
+    devices: []
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-lp0-platform
+      releases: https://github.com/SmartParksOrg/smartparks-lp0-platform/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-lp0-replay-app]
+    notes: "FastAPI and React rebuild of the LP0 replay tool. Work in progress."
+  - name: arduino-ble-accelerometer
+    display_name: "Arduino BLE accelerometer streamer"
+    category: tool
+    status: experimental
+    visibility: public
+    description: ""
+    license: "none"
+    default_branch: main
+    last_push: "2026-07-01"
+    devices: []
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/arduino-ble-accelerometer
+      releases: https://github.com/SmartParksOrg/arduino-ble-accelerometer/releases
+      docs: null
+      app: https://smartparksorg.github.io/arduino-ble-accelerometer/
+    releases:
+      track: false
+      asset_patterns: []
+    related: [opencollar-acc-calculator]
+    notes: "Arduino Nano 33 BLE Sense sketch plus a browser viewer with movement statistics and a rhino behaviour classifier. Research companion to the accelerometer calculator."
+  - name: smartparks-provisioning-software
+    display_name: "Provisioning and test rack software"
+    category: tool
+    status: private
+    visibility: private
+    description: "Contains code used in smartparks device testing, provisioning and packaging"
+    license: "none"
+    default_branch: dev
+    last_push: "2026-09-23"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-provisioning-software
+      releases: https://github.com/SmartParksOrg/smartparks-provisioning-software/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-opencollar-edge-fw]
+    notes: "Raspberry Pi provisioning rack: flashing, testing and packaging of devices. Private."
+  - name: lorawan-devices
+    display_name: "TTN device repository (first-generation OpenCollar entry)"
+    category: decoder
+    status: legacy
+    visibility: public
+    description: "LoRaWAN Device Repository"
+    license: "Apache-2.0"
+    default_branch: master
+    last_push: "2021-07-08"
+    devices: [opencollar-gen1]
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/lorawan-devices
+      releases: https://github.com/SmartParksOrg/lorawan-devices/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-toolset]
+    notes: "Fork of the TTN LoRaWAN device repository. Contains only the 2021 first-generation OpenCollar profile and codec (firmware 2.6). No Edge entry."
+  - name: node-red-contrib-chirpstack
+    display_name: "Node-RED nodes for ChirpStack"
+    category: integration
+    status: maintained
+    visibility: public
+    description: ""
+    license: "MIT"
+    default_branch: dev
+    last_push: "2022-01-17"
+    devices: []
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/node-red-contrib-chirpstack
+      releases: https://github.com/SmartParksOrg/node-red-contrib-chirpstack/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [node-red-contrib-earthranger]
+    notes: "Part of the Smart Parks stack, not OpenCollar specific."
+  - name: node-red-contrib-earthranger
+    display_name: "Node-RED nodes for EarthRanger"
+    category: integration
+    status: maintained
+    visibility: public
+    description: "Earth Ranger integration for Node-Red"
+    license: "MIT"
+    default_branch: dev
+    last_push: "2023-05-08"
+    devices: []
+    audience: [developer]
+    links:
+      repo: https://github.com/SmartParksOrg/node-red-contrib-earthranger
+      releases: https://github.com/SmartParksOrg/node-red-contrib-earthranger/releases
+      docs: null
+      app: null
+    releases:
+      track: false
+      asset_patterns: []
+    related: [node-red-contrib-chirpstack]
+    notes: "Part of the Smart Parks stack, not OpenCollar specific."
+  - name: smartparks-protect
+    display_name: "Smart Parks Protect (platform)"
+    category: platform
+    status: current
+    visibility: public
+    description: "Self-hosted operational data platform for Smart Parks: field devices and IoT platforms on one live map, with analysis, rules, device control and integrations such as EarthRanger"
+    license: "MIT"
+    default_branch: main
+    last_push: "2026-09-24"
+    devices: [rangeredge, trapedge, fenceedge, wisentedge, elephantedge, scanneredge, collaredge, collaredge-free, collaredge-pico, collaredge-nano, rhinoedge-cube, rhinoedge-puck35, rhinoedge-puck50, horseedge, baboonedge, pangolinedge]
+    audience: [developer, user]
+    links:
+      repo: https://github.com/SmartParksOrg/smartparks-protect
+      releases: https://github.com/SmartParksOrg/smartparks-protect/releases
+      docs: null
+      app: https://smartparksorg.github.io/smartparks-protect/
+    releases:
+      track: false
+      asset_patterns: []
+    related: [smartparks-opencollar-edge-fw-public]
+    notes: "Separate Smart Parks platform. Contains an OpenCollar device driver, Web Bluetooth device control, raw log file import and the OpenCollar protocol research document. Not part of the OpenCollar repository set."
+  - name: opencollar
+    display_name: "OpenCollar documentation hub (this repository)"
+    category: hub
+    status: current
+    visibility: public
+    description: "OpenCollar - Open-source wildlife tracking technology by Smart Parks"
+    license: "CC-BY-SA-4.0 / MIT"
+    default_branch: main
+    last_push: "2026-09-24"
+    devices: []
+    audience: [user, developer, hardware]
+    links:
+      repo: https://github.com/SmartParksOrg/opencollar
+      releases: https://github.com/SmartParksOrg/opencollar/releases
+      docs: null
+      app: https://smartparksorg.github.io/opencollar/
+    releases:
+      track: false
+      asset_patterns: []
+    related: []
+    notes: "Central entry point and website for the OpenCollar ecosystem."

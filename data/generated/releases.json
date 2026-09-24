@@ -1,0 +1,608 @@
+{
+  "generated_at": "2026-09-24T15:42:56+00:00",
+  "repositories": {
+    "ble-settings-app": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": null,
+      "latest_tag": null,
+      "open_issues": 0,
+      "pushed_at": "2026-09-21T09:25:00Z"
+    },
+    "raw_logs_decoder": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.17",
+        "prerelease": false,
+        "published_at": "2025-10-17T14:58:29Z",
+        "tag": "v1.17",
+        "url": "https://github.com/SmartParksOrg/raw_logs_decoder/releases/tag/v1.17"
+      },
+      "latest_tag": "v1.43",
+      "open_issues": 0,
+      "pushed_at": "2026-07-08T18:27:52Z"
+    },
+    "smartparks-collaredge-hardware": {
+      "archived": false,
+      "default_branch": "master",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "ASM-smartparks-collaredge-hardware-BUOYFISH_PRODUCTION_V1.7.1.zip",
+            "size": 3404452,
+            "url": "https://github.com/SmartParksOrg/smartparks-collaredge-hardware/releases/download/v1.7.1/ASM-smartparks-collaredge-hardware-BUOYFISH_PRODUCTION_V1.7.1.zip"
+          },
+          {
+            "name": "FAB-smartparks-collaredge-hardware-V1.7.1.zip",
+            "size": 1014707,
+            "url": "https://github.com/SmartParksOrg/smartparks-collaredge-hardware/releases/download/v1.7.1/FAB-smartparks-collaredge-hardware-V1.7.1.zip"
+          },
+          {
+            "name": "PCBA-smartparks-collaredge-hardware-BASIC-V1.7.1.zip",
+            "size": 3506004,
+            "url": "https://github.com/SmartParksOrg/smartparks-collaredge-hardware/releases/download/v1.7.1/PCBA-smartparks-collaredge-hardware-BASIC-V1.7.1.zip"
+          },
+          {
+            "name": "PCBA-smartparks-collaredge-hardware-COLLAREDGE_PRODUCTION-V1.7.1.zip",
+            "size": 3340025,
+            "url": "https://github.com/SmartParksOrg/smartparks-collaredge-hardware/releases/download/v1.7.1/PCBA-smartparks-collaredge-hardware-COLLAREDGE_PRODUCTION-V1.7.1.zip"
+          }
+        ],
+        "name": "Release V1.7.1",
+        "prerelease": false,
+        "published_at": "2025-12-05T06:41:15Z",
+        "tag": "v1.7.1",
+        "url": "https://github.com/SmartParksOrg/smartparks-collaredge-hardware/releases/tag/v1.7.1"
+      },
+      "latest_tag": "v1.7.1",
+      "open_issues": 0,
+      "pushed_at": "2025-12-05T06:41:15Z"
+    },
+    "smartparks-collaredge_38mm_50mm-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2025-10-29T13:56:08Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-collaredge_38mm_50mm-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2026-03-17T10:33:49Z"
+    },
+    "smartparks-collaredge_38mm_50mm-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.2",
+        "prerelease": false,
+        "published_at": "2026-03-17T10:28:36Z",
+        "tag": "v1.2.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-collaredge_38mm_50mm-mechanics/releases/tag/v1.2.0"
+      },
+      "latest_tag": "v1.2.0",
+      "open_issues": 0,
+      "pushed_at": "2026-03-17T10:28:23Z"
+    },
+    "smartparks-collaredge_free-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": null,
+      "latest_tag": null,
+      "open_issues": 0,
+      "pushed_at": "2026-04-02T10:07:06Z"
+    },
+    "smartparks-collaredge_free-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": null,
+      "latest_tag": null,
+      "open_issues": 0,
+      "pushed_at": "2026-04-02T10:04:47Z"
+    },
+    "smartparks-collaredge_pico-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v0.1",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:27:17Z",
+        "tag": "v0.1.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-collaredge_pico-master/releases/tag/v0.1.0"
+      },
+      "latest_tag": "v0.1.0",
+      "open_issues": 0,
+      "pushed_at": "2025-12-10T11:08:30Z"
+    },
+    "smartparks-collaredge_pico-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.1",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:19:21Z",
+        "tag": "v1.1.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-collaredge_pico-mechanics/releases/tag/v1.1.0"
+      },
+      "latest_tag": "v1.1.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T11:19:07Z"
+    },
+    "smartparks-elephantedge-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:28:07Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-elephantedge-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2025-12-10T11:09:18Z"
+    },
+    "smartparks-elephantedge-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:20:06Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-elephantedge-mechanics/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T11:19:49Z"
+    },
+    "smartparks-elephantedge_battery_pack-hardware": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "FAB-smartparks-elephantedge_battery_pack-hardware-V3.2.0.zip",
+            "size": 41831,
+            "url": "https://github.com/SmartParksOrg/smartparks-elephantedge_battery_pack-hardware/releases/download/V3.2.0/FAB-smartparks-elephantedge_battery_pack-hardware-V3.2.0.zip"
+          },
+          {
+            "name": "PCBA-smartparks-elephantedge_battery_pack-hardware-BASIC-V3.2.0.zip",
+            "size": 1107819,
+            "url": "https://github.com/SmartParksOrg/smartparks-elephantedge_battery_pack-hardware/releases/download/V3.2.0/PCBA-smartparks-elephantedge_battery_pack-hardware-BASIC-V3.2.0.zip"
+          },
+          {
+            "name": "SRC-smartparks-elephantedge_battery_pack-hardware-V3.2.0.zip",
+            "size": 1092638,
+            "url": "https://github.com/SmartParksOrg/smartparks-elephantedge_battery_pack-hardware/releases/download/V3.2.0/SRC-smartparks-elephantedge_battery_pack-hardware-V3.2.0.zip"
+          }
+        ],
+        "name": "Release V3.2.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T08:45:24Z",
+        "tag": "V3.2.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-elephantedge_battery_pack-hardware/releases/tag/V3.2.0"
+      },
+      "latest_tag": "V3.2.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T09:32:43Z"
+    },
+    "smartparks-fence_monitor-hardware": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "FAB-smartparks-fencemonitor-hardware-V2.1.0.zip",
+            "size": 254153,
+            "url": "https://github.com/SmartParksOrg/smartparks-fence_monitor-hardware/releases/download/V2.1.0/FAB-smartparks-fencemonitor-hardware-V2.1.0.zip"
+          },
+          {
+            "name": "PCBA-smartparks-fencemonitor-hardware-BASIC-V2.1.0.zip",
+            "size": 1097805,
+            "url": "https://github.com/SmartParksOrg/smartparks-fence_monitor-hardware/releases/download/V2.1.0/PCBA-smartparks-fencemonitor-hardware-BASIC-V2.1.0.zip"
+          }
+        ],
+        "name": "Release V2.1.0",
+        "prerelease": false,
+        "published_at": "2023-06-01T09:23:04Z",
+        "tag": "V2.1.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-fence_monitor-hardware/releases/tag/V2.1.0"
+      },
+      "latest_tag": "V2.1.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T09:32:22Z"
+    },
+    "smartparks-fence_monitor-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:27:28Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-fence_monitor-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2025-12-10T11:08:39Z"
+    },
+    "smartparks-freeedge-hardware": {
+      "archived": false,
+      "default_branch": "master",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "FAB-smartparks-collaredge_free-hardware-V1.4.1.zip",
+            "size": 743125,
+            "url": "https://github.com/SmartParksOrg/smartparks-freeedge-hardware/releases/download/V1.4.1/FAB-smartparks-collaredge_free-hardware-V1.4.1.zip"
+          },
+          {
+            "name": "PCBA-smartparks-collaredge_free-hardware-BASIC-V1.4.1.zip",
+            "size": 3422320,
+            "url": "https://github.com/SmartParksOrg/smartparks-freeedge-hardware/releases/download/V1.4.1/PCBA-smartparks-collaredge_free-hardware-BASIC-V1.4.1.zip"
+          },
+          {
+            "name": "SRC-smartparks-collaredge_free-hardware-V1.4.1.zip",
+            "size": 7109019,
+            "url": "https://github.com/SmartParksOrg/smartparks-freeedge-hardware/releases/download/V1.4.1/SRC-smartparks-collaredge_free-hardware-V1.4.1.zip"
+          }
+        ],
+        "name": "Release V1.4.1",
+        "prerelease": false,
+        "published_at": "2025-04-08T06:01:42Z",
+        "tag": "V1.4.1",
+        "url": "https://github.com/SmartParksOrg/smartparks-freeedge-hardware/releases/tag/V1.4.1"
+      },
+      "latest_tag": "V1.4.1",
+      "open_issues": 0,
+      "pushed_at": "2025-04-08T06:01:42Z"
+    },
+    "smartparks-opencollar-edge-fw-public": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "air-quality-v8.0.1.zip",
+            "size": 52729242,
+            "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/download/v8.0.1/air-quality-v8.0.1.zip"
+          },
+          {
+            "name": "open-collar-v8.0.1-debug.zip",
+            "size": 70458317,
+            "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/download/v8.0.1/open-collar-v8.0.1-debug.zip"
+          },
+          {
+            "name": "open-collar-v8.0.1-prov.zip",
+            "size": 63465821,
+            "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/download/v8.0.1/open-collar-v8.0.1-prov.zip"
+          },
+          {
+            "name": "open-collar-v8.0.1.zip",
+            "size": 58353258,
+            "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/download/v8.0.1/open-collar-v8.0.1.zip"
+          },
+          {
+            "name": "samples-v8.0.1.zip",
+            "size": 26823200,
+            "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/download/v8.0.1/samples-v8.0.1.zip"
+          },
+          {
+            "name": "settings-v8.0.1.json",
+            "size": 34022,
+            "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/download/v8.0.1/settings-v8.0.1.json"
+          },
+          {
+            "name": "ttn_decoder-v8.0.1.js",
+            "size": 18064,
+            "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/download/v8.0.1/ttn_decoder-v8.0.1.js"
+          }
+        ],
+        "name": "v8.0.1",
+        "prerelease": false,
+        "published_at": "2026-09-24T13:12:18Z",
+        "tag": "v8.0.1",
+        "url": "https://github.com/SmartParksOrg/smartparks-opencollar-edge-fw-public/releases/tag/v8.0.1"
+      },
+      "latest_tag": "v8.0.1",
+      "open_issues": 0,
+      "pushed_at": "2026-09-24T13:12:13Z"
+    },
+    "smartparks-rangeredge-hardware": {
+      "archived": false,
+      "default_branch": "master",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "FAB-smartparks-rangeredge-hardware-V1.13.1.zip",
+            "size": 2402796,
+            "url": "https://github.com/SmartParksOrg/smartparks-rangeredge-hardware/releases/download/V1.13.1/FAB-smartparks-rangeredge-hardware-V1.13.1.zip"
+          },
+          {
+            "name": "PCBA-smartparks-rangeredge-hardware-BASIC-V1.13.1.zip",
+            "size": 5054045,
+            "url": "https://github.com/SmartParksOrg/smartparks-rangeredge-hardware/releases/download/V1.13.1/PCBA-smartparks-rangeredge-hardware-BASIC-V1.13.1.zip"
+          },
+          {
+            "name": "PCBA-smartparks-rangeredge-hardware-PROTECTION.ONLY-V1.13.1.zip",
+            "size": 2190264,
+            "url": "https://github.com/SmartParksOrg/smartparks-rangeredge-hardware/releases/download/V1.13.1/PCBA-smartparks-rangeredge-hardware-PROTECTION.ONLY-V1.13.1.zip"
+          },
+          {
+            "name": "PCBA-smartparks-rangeredge-hardware-Q42_EXTERNAL_ANT-V1.13.1.zip",
+            "size": 5055174,
+            "url": "https://github.com/SmartParksOrg/smartparks-rangeredge-hardware/releases/download/V1.13.1/PCBA-smartparks-rangeredge-hardware-Q42_EXTERNAL_ANT-V1.13.1.zip"
+          }
+        ],
+        "name": "Release V1.13.1",
+        "prerelease": false,
+        "published_at": "2025-12-05T06:38:52Z",
+        "tag": "V1.13.1",
+        "url": "https://github.com/SmartParksOrg/smartparks-rangeredge-hardware/releases/tag/V1.13.1"
+      },
+      "latest_tag": "V1.13.1",
+      "open_issues": 1,
+      "pushed_at": "2025-12-05T06:38:52Z"
+    },
+    "smartparks-rangeredge-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:27:39Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rangeredge-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 1,
+      "pushed_at": "2025-12-12T07:02:53Z"
+    },
+    "smartparks-rangeredge-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:22:07Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rangeredge-mechanics/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T11:21:53Z"
+    },
+    "smartparks-rhinoedge_cube-hardware": {
+      "archived": false,
+      "default_branch": "master",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "FAB-smartparks-rhinoedge-hardware-V1.6.0.zip",
+            "size": 715273,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-hardware/releases/download/V1.6.0/FAB-smartparks-rhinoedge-hardware-V1.6.0.zip"
+          },
+          {
+            "name": "PCBA-smartparks-rhinoedge-hardware-BASIC-V1.6.0.zip",
+            "size": 2336807,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-hardware/releases/download/V1.6.0/PCBA-smartparks-rhinoedge-hardware-BASIC-V1.6.0.zip"
+          },
+          {
+            "name": "PCBA-smartparks-rhinoedge-hardware-BATCH-V1.6.0.zip",
+            "size": 2268791,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-hardware/releases/download/V1.6.0/PCBA-smartparks-rhinoedge-hardware-BATCH-V1.6.0.zip"
+          },
+          {
+            "name": "SRC-smartparks-rhinoedge-hardware-V1.6.0.zip",
+            "size": 5862020,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-hardware/releases/download/V1.6.0/SRC-smartparks-rhinoedge-hardware-V1.6.0.zip"
+          }
+        ],
+        "name": "Release V1.6.0",
+        "prerelease": false,
+        "published_at": "2025-04-08T06:21:41Z",
+        "tag": "V1.6.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-hardware/releases/tag/V1.6.0"
+      },
+      "latest_tag": "V1.6.0",
+      "open_issues": 0,
+      "pushed_at": "2025-04-08T06:21:41Z"
+    },
+    "smartparks-rhinoedge_cube-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:28:18Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2025-12-10T11:09:36Z"
+    },
+    "smartparks-rhinoedge_cube-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.3",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:20:34Z",
+        "tag": "v1.3.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_cube-mechanics/releases/tag/v1.3.0"
+      },
+      "latest_tag": "v1.3.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T11:20:22Z"
+    },
+    "smartparks-rhinoedge_puck35-hardware": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "FAB-smartparks-rhinopuck35-hardware-V1.2.0.zip",
+            "size": 479062,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-hardware/releases/download/V1.2.0/FAB-smartparks-rhinopuck35-hardware-V1.2.0.zip"
+          },
+          {
+            "name": "PCBA-smartparks-rhinopuck35-hardware-BASIC-V1.2.0.zip",
+            "size": 4071633,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-hardware/releases/download/V1.2.0/PCBA-smartparks-rhinopuck35-hardware-BASIC-V1.2.0.zip"
+          },
+          {
+            "name": "SRC-smartparks-rhinopuck35-hardware-V1.2.0.zip",
+            "size": 4610618,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-hardware/releases/download/V1.2.0/SRC-smartparks-rhinopuck35-hardware-V1.2.0.zip"
+          }
+        ],
+        "name": "Release V1.2.0",
+        "prerelease": false,
+        "published_at": "2023-06-01T11:18:50Z",
+        "tag": "V1.2.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-hardware/releases/tag/V1.2.0"
+      },
+      "latest_tag": "V1.2.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T09:33:07Z"
+    },
+    "smartparks-rhinoedge_puck35-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:27:59Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 1,
+      "pushed_at": "2025-12-10T11:09:04Z"
+    },
+    "smartparks-rhinoedge_puck35-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.4",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:21:23Z",
+        "tag": "v1.4.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck35-mechanics/releases/tag/v1.4.0"
+      },
+      "latest_tag": "v1.4.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T11:21:12Z"
+    },
+    "smartparks-rhinoedge_puck50-hardware": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [
+          {
+            "name": "FAB-smartparks-rhinopuck-hardware-V1.3.0.zip",
+            "size": 479587,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-hardware/releases/download/V1.3.0/FAB-smartparks-rhinopuck-hardware-V1.3.0.zip"
+          },
+          {
+            "name": "PCBA-smartparks-rhinopuck-hardware-BASIC-V1.3.0.zip",
+            "size": 3199304,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-hardware/releases/download/V1.3.0/PCBA-smartparks-rhinopuck-hardware-BASIC-V1.3.0.zip"
+          },
+          {
+            "name": "SRC-smartparks-rhinopuck-hardware-V1.3.0.zip",
+            "size": 4714200,
+            "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-hardware/releases/download/V1.3.0/SRC-smartparks-rhinopuck-hardware-V1.3.0.zip"
+          }
+        ],
+        "name": "Release V1.3.0",
+        "prerelease": false,
+        "published_at": "2024-07-18T09:18:58Z",
+        "tag": "V1.3.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-hardware/releases/tag/V1.3.0"
+      },
+      "latest_tag": "V1.3.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T09:33:15Z"
+    },
+    "smartparks-rhinoedge_puck50-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:28:24Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2025-12-10T11:09:50Z"
+    },
+    "smartparks-rhinoedge_puck50-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.4",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:21:04Z",
+        "tag": "v1.4.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-rhinoedge_puck50-mechanics/releases/tag/v1.4.0"
+      },
+      "latest_tag": "v1.4.0",
+      "open_issues": 0,
+      "pushed_at": "2024-07-19T11:20:52Z"
+    },
+    "smartparks-wisentedge-master": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.0",
+        "prerelease": false,
+        "published_at": "2024-07-19T11:27:47Z",
+        "tag": "v1.0.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-wisentedge-master/releases/tag/v1.0.0"
+      },
+      "latest_tag": "v1.0.0",
+      "open_issues": 0,
+      "pushed_at": "2025-12-10T11:08:22Z"
+    },
+    "smartparks-wisentedge-mechanics": {
+      "archived": false,
+      "default_branch": "main",
+      "latest_release": {
+        "assets": [],
+        "name": "v1.1",
+        "prerelease": false,
+        "published_at": "2026-03-20T13:10:50Z",
+        "tag": "v1.1.0",
+        "url": "https://github.com/SmartParksOrg/smartparks-wisentedge-mechanics/releases/tag/v1.1.0"
+      },
+      "latest_tag": "v1.1.0",
+      "open_issues": 0,
+      "pushed_at": "2026-03-20T13:10:39Z"
+    }
+  }
+}

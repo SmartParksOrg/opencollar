@@ -1,0 +1,27 @@
+/* Smart Parks brand colours: dark green #52735E, light green #90AE9B */
+:root {
+  --md-primary-fg-color: #52735E;
+  --md-primary-fg-color--light: #90AE9B;
+  --md-primary-fg-color--dark: #3f5a49;
+  --md-accent-fg-color: #90AE9B;
+  --md-accent-fg-color--transparent: rgba(144, 174, 155, 0.15);
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #52735E;
+  --md-accent-fg-color: #90AE9B;
+  --md-typeset-a-color: #90AE9B;
+}
+.md-header__button.md-logo img { height: 2rem; }
+.oc-badge {
+  display: inline-block; padding: 0 .5em; border-radius: .8em; font-size: .7rem; font-weight: 600;
+  background: #90AE9B; color: #10231a; vertical-align: middle; margin-left: .3em;
+}
+.oc-badge--current { background: #52735E; color: #fff; }
+.oc-badge--experimental { background: #d9a441; color: #1e1a10; }
+.oc-badge--legacy, .oc-badge--archived { background: #9a9a9a; color: #1e1e1e; }
+.oc-badge--private { background: #6b6b6b; color: #fff; }
+.oc-badge--low { background: #c96a6a; color: #fff; }
+.oc-badge--medium { background: #d9a441; color: #1e1a10; }
+.oc-device-image { max-width: 320px; float: right; margin: 0 0 1rem 1.5rem; border-radius: .4rem; }
+@media (max-width: 720px) { .oc-device-image { float: none; max-width: 100%; margin: 0 0 1rem 0; } }
+.md-typeset table:not([class]) { font-size: .72rem; }

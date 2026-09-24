@@ -1,0 +1,27 @@
+OpenCollar documentation hub: licensing overview
+================================================
+
+This repository contains documentation, data files and small build scripts
+that are licensed under different but compatible open licenses.
+
+Unless otherwise noted in a specific file or directory:
+
+- Documentation and data (everything under docs/ and data/, README.md,
+  DISCOVERY-REPORT.md and the site built from them) is licensed under the
+  Creative Commons Attribution-ShareAlike 4.0 International License
+  (CC-BY-SA-4.0). See LICENSES/CC-BY-SA-4.0.txt.
+
+- Scripts, configuration and workflows (scripts/, main.py, mkdocs.yml,
+  .github/) are licensed under the MIT License. See LICENSES/MIT.txt.
+
+The hardware, firmware and tools that this site documents live in their own
+repositories under their own licenses.
+
+Trademarks
+----------
+
+Smart Parks, OpenCollar, CollarEdge and other *Edge names are trademarks of
+the Smart Parks organization. These licenses do not grant permission to use
+these trademarks except for reasonable attribution. They may not be used to
+imply endorsement or authorization of any hardware, software or services
+without prior written permission from Smart Parks.

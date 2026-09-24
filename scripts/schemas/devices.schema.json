@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenCollar device inventory",
+  "type": "object",
+  "required": ["devices"],
+  "properties": {
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name", "family", "status", "availability", "summary", "firmware", "positioning", "connectivity", "sensors", "power", "physical", "repositories", "tools", "external_links", "variants", "based_on", "confidence", "notes"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "display_name": {"type": "string"},
+          "family": {"enum": ["rangeredge", "collaredge", "rhinoedge", "experimental", "legacy"]},
+          "status": {"enum": ["current", "experimental", "legacy"]},
+          "availability": {"enum": ["catalog", "on-request", "prototype", "discontinued"]},
+          "summary": {"type": "string"},
+          "use_cases": {"type": "array", "items": {"type": "string"}},
+          "firmware": {
+            "type": "object",
+            "required": ["board", "tracker_type", "hardware_revisions"],
+            "properties": {
+              "board": {"type": ["string", "null"]},
+              "tracker_type": {"type": ["string", "null"]},
+              "tracker_type_value": {"type": ["integer", "null"]},
+              "hardware_revisions": {"type": "array", "items": {"type": "string"}},
+              "special_builds": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "positioning": {"type": "array", "items": {"type": "string"}},
+          "connectivity": {"type": "array", "items": {"type": "string"}},
+          "sensors": {"type": "array", "items": {"type": "string"}},
+          "power": {
+            "type": "object",
+            "properties": {
+              "type": {"enum": ["rechargeable", "primary", null]},
+              "batteries": {"type": ["string", "null"]},
+              "capacity_ah": {"type": ["number", "null"]},
+              "charging": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "physical": {
+            "type": "object",
+            "properties": {
+              "dimensions_mm": {"type": ["array", "null"], "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+              "weight_g": {"type": ["number", "null"]},
+              "enclosure": {"type": ["string", "null"]}
+            }
+          },
+          "repositories": {
+            "type": "object",
+            "required": ["docs", "hardware", "mechanics"],
+            "properties": {
+              "docs": {"type": ["string", "null"]},
+              "hardware": {"type": "array", "items": {"type": "string"}},
+              "mechanics": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "tools": {
+            "type": "object",
+            "properties": {
+              "configure": {"type": "array", "items": {"type": "string"}},
+              "decode": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "image": {"type": ["string", "null"]},
+          "external_links": {
+            "type": "object",
+            "properties": {
+              "wiki": {"type": ["string", "null"]},
+              "datasheet": {"type": ["string", "null"]},
+              "catalog": {"type": ["string", "null"]}
+            }
+          },
+          "variants": {"type": "array", "items": {"type": "string"}},
+          "based_on": {"type": ["string", "null"]},
+          "confidence": {"enum": ["high", "medium", "low"]},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

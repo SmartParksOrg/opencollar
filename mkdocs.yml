@@ -1,0 +1,138 @@
+site_name: OpenCollar
+site_description: Open-source wildlife tracking technology by Smart Parks. Devices, firmware, tools, protocols and repositories in one place.
+site_url: https://smartparksorg.github.io/opencollar/
+repo_url: https://github.com/SmartParksOrg/opencollar
+repo_name: SmartParksOrg/opencollar
+edit_uri: edit/main/docs/
+copyright: Documentation CC BY-SA 4.0, Smart Parks. OpenCollar, CollarEdge and the other *Edge names are trademarks of Smart Parks.
+
+theme:
+  name: material
+  language: en
+  logo: assets/smartparks-logo.png
+  favicon: assets/smartparks-logo.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/stylesheets/opencollar.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SmartParksOrg
+      name: SmartParksOrg on GitHub
+    - icon: fontawesome/solid/globe
+      link: https://www.smartparks.org/opencollar-io/
+      name: OpenCollar at Smart Parks
+    - icon: fontawesome/solid/book
+      link: https://wiki.smartparks.org/devices/opencollar
+      name: Smart Parks Wiki
+
+plugins:
+  - search
+  - macros:
+      module_name: main
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started/index.md
+  - Devices:
+      - devices/index.md
+      - RangerEdge family:
+          - RangerEdge: devices/rangeredge.md
+          - TrapEdge: devices/trapedge.md
+          - FenceEdge: devices/fenceedge.md
+          - WisentEdge: devices/wisentedge.md
+          - ElephantEdge: devices/elephantedge.md
+          - ScannerEdge: devices/scanneredge.md
+      - CollarEdge family:
+          - CollarEdge 38mm and 50mm: devices/collaredge.md
+          - CollarEdge Free: devices/collaredge-free.md
+          - CollarEdge Pico: devices/collaredge-pico.md
+          - CollarEdge Nano: devices/collaredge-nano.md
+      - RhinoEdge family:
+          - RhinoEdge Cube: devices/rhinoedge-cube.md
+          - RhinoEdge Puck 35: devices/rhinoedge-puck35.md
+          - RhinoEdge Puck 50: devices/rhinoedge-puck50.md
+      - Experimental:
+          - RangerEdge AirQ: devices/rangeredge-airq.md
+          - HorseEdge: devices/horseedge.md
+          - BaboonEdge: devices/baboonedge.md
+          - PangolinEdge: devices/pangolinedge.md
+          - EdgeTag: devices/edgetag.md
+          - Drop-off: devices/dropoff.md
+      - Legacy:
+          - First generation: devices/opencollar-gen1.md
+  - Tools:
+      - tools/index.md
+      - Configure your OpenCollar: tools/configure.md
+      - Update firmware: tools/update-firmware.md
+      - Download and decode logs: tools/decode-logs.md
+      - LoRaWAN payload decoders: tools/payload-decoders.md
+      - Accelerometer calculator: tools/acc-calculator.md
+      - Legacy tools: tools/legacy.md
+  - Firmware:
+      - firmware/index.md
+      - Supported hardware: firmware/supported-hardware.md
+      - Releases: firmware/releases.md
+      - Building from source: firmware/building.md
+  - Protocols:
+      - protocols/index.md
+  - Hardware:
+      - hardware/index.md
+  - Integrations:
+      - integrations/index.md
+  - Developers:
+      - developers/index.md
+      - Repositories: developers/repositories.md
+      - Contributing: developers/contributing.md
+      - Licensing and trademarks: developers/licensing.md
+  - About: about/index.md
